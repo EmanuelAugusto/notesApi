@@ -1,15 +1,19 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-var NoteSchema = new Schema({
+var EventSchema = new Schema({
   userId: {
     type: Schema.Types.ObjectId,
     ref: 'User',
   },
-  title: {
+  eventDate: {
+    type: String,
+    required: "date of event is required"
+  },
+  eventName: {
     type: String,
   },
-  noteHtml: {
+  eventDescription:{
     type: String,
   },
   erased: {
@@ -22,4 +26,4 @@ var NoteSchema = new Schema({
   },
 })
 
-module.exports = mongoose.model('Note', NoteSchema)
+module.exports = mongoose.model('Event', EventSchema)

@@ -20,9 +20,6 @@ var UserSchema = new Schema({
     select: false,
     set: (value) => bcrypt.hashSync(value, 10),
   },
-  cpf: {
-    type: String,
-  },
   erased: {
     type: Number,
     default: 0,
